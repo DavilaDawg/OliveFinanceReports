@@ -2,7 +2,7 @@ name: Nightly Report
 
 on:
   schedule:
-    - cron: '0 4 * * *'   # runs at 4:00 AM UTC (12am AST) every day 
+    - cron: '0 4 * * *' # runs at 4:00 AM UTC (12am AST) every day 
   workflow_dispatch:        # lets you also trigger it manually from GitHub's UI, for testing
 
 jobs:
