@@ -127,8 +127,3 @@ def read_inbox(email_address, app_password):
             pass
         mail.logout()
 
-if __name__ == "__main__":
-    read_inbox()
-    
-
-

@@ -20,6 +20,14 @@ jobs:
       - name: Install dependencies
         run: python -m pip install -r requirements.txt
 
+      - name: Debug env vars
+        env:
+          REPORTS_EMAIL_ADDRESS: ${{ secrets.REPORTS_EMAIL_ADDRESS }}
+          REPORTS_EMAIL_APP_PASSWORD: ${{ secrets.REPORTS_EMAIL_APP_PASSWORD }}
+        run: |
+          if [ -z "$REPORTS_EMAIL_ADDRESS" ]; then echo "EMAIL: MISSING"; else echo "EMAIL: present"; fi
+          if [ -z "$REPORTS_EMAIL_APP_PASSWORD" ]; then echo "PASSWORD: MISSING"; else echo "PASSWORD: present"; fi
+
       - name: Run main
         env:
           REPORTS_EMAIL_ADDRESS: ${{ secrets.REPORTS_EMAIL_ADDRESS }}
