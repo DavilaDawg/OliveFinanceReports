@@ -1,1 +1,1 @@
-import xlsxwriter # To write the final report to Excel
+# Create report from the downloaded Excel files
